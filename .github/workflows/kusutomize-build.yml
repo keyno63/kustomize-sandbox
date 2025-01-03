@@ -27,4 +27,4 @@ jobs:
 
     - name: Run Kustomize Build
       run: |
-        kustomize build ./manifests/overlays/${matrix.deploy.env}
+        kustomize build ./manifests/overlays/${{matrix.deploy.env}}
