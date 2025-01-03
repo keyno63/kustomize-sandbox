@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampleapp
+spec:
+  replicas: 3  # update replicas
+  template:
+    spec:
+      containers:
+      - name: app
+        resources:
+          requests:
+            cpu: "500m"  # update requests.cpu

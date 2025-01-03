@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampleapp
+spec:
+  selector:
+    matchLabels:
+      app: sampleapp
+  template:
+    metadata:
+      labels:
+        app: sampleapp
+    spec:
+      containers:
+      - name: app
+        image: keyno63/kostmize-sample:v1
+        ports:
+        - containerPort: 80
+        resources:
+            requests:
+              cpu: "250m"

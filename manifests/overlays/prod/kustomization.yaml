@@ -1,0 +1,5 @@
+resources:
+- ../../bases/
+namespace: kustomize-sandbox-prod  # Namespace
+patches:
+- path: deployment.yaml  # Deployment
