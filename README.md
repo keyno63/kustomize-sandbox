@@ -4,7 +4,10 @@
 ### build (Docker image)
 
 ```
-docker build -t keyno63/kostmize-sample:v1 .
+docker build \
+  -t keyno63/kostmize-sample:v1 \
+  -f docker/Dockerfile \
+  docker
 ```
 
 ### deploy
