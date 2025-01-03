@@ -7,6 +7,10 @@ COPY ./app /work
 RUN go build -o /bin/app /work
 
 FROM rockylinux:${ROCKY_VERSION}
+ARG USERNAME=golang
+ARG GROUPNAME=golang
 COPY --from=base /bin/app /bin/app
-USER golang
+RUN groupadd -g 1000 ${GROUPNAME} && \
+    useradd -m -s /bin/bash -u 1000 -g ${GROUPNAME} ${USERNAME}
+USER $USERNAME
 ENTRYPOINT ["/bin/app"]
